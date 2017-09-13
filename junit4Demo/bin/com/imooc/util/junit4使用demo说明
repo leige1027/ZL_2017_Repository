@@ -1,0 +1,100 @@
+1.要测试的类 : 
+  /junit4Demo/src/com/imooc/util/
+  Calculate.java
+2.测试类(3):
+  /junit4Demo/test/com/imooc/util/
+  2.1:
+    AnotationTest.java
+    /*
+	 * @Test:将一个普通方法修饰成一个测试方法
+	 *   @Test(expected=XX.class):预期抛出一个异常
+	 *   @Test(timeout=毫秒):对方法运行时间做一个限制
+	 * @BeforeClass:所有方法运行前执行一次，static修饰
+	 * @AfterClass:所有方法运行结束后运行一次，static修饰
+	 * @Before:每个测试方法前执行一次
+	 * @After:每个测试方法后执行一次
+	 * @Ignore:修饰的方法会被测试运行器忽略，不会被执行
+	 * @RunWith:可以更改测试运行器，继承org.junit.runner.Runner
+	 * 
+	 */
+  2.2:
+    CalculateTest.java
+    /*
+	 * 1.测试方法上必须使用@Test修饰
+	 * 2.测试方法必须使用public void 进行修饰,不能带参数
+	 * 3.新建一个源代码目录来存放我们的测试代码
+	 * 4.测试类的包应该和被测试类保持一致
+	 * 5.测试单元中每个方法必须可以独立测试，测试方法之间不能有依赖
+	 * 6.测试方法使用Test作为类名后缀，非必须
+	 * 7.测试方法使用test作为方法名的前缀，非必须
+	 * 8.Failure一般由单元测试使用的断言方法判断失败引起的，这表示测试点
+	 *   发现了问题，程序输出结果跟我们预期不一致
+	 * 9.error是代码异常引起的，它可以产生于测试代码本身的错误，
+	 *   也可以是被测试代码中一个隐藏的bug
+	 * 10.测试用例不是用来证明你是正确的，而是证明你没有错
+	 */
+  2.3:
+    JunitFlowTest.java
+    /*
+	 * 1.@BeforeClass修饰的方法会在所有方法被调用前执行，
+	 *   而且该方法是静态的，所以当测试类被加载后接着就会运行，
+	 *   在内存中只存在一份实例，比较适合加载配置文件。
+	 * 2.@AfterClass修饰的方法通常用来对资源的清理，如关闭数据库连接
+	 * 3.@Before和@After会在每个测试方法前后各执行一次
+	 * 
+	 */
+3.测试套件(4):
+  /junit4Demo/test/com/imooc/util/
+  3.1:测试套件类:
+    SuiteTest.java
+    /*
+	 * 1.测试套件就是组织测试类一起运行的
+	 * 2.写一个测试套件的入口类，该类不包含任何方法
+	 * 3.更改测试运行器Suite.class
+	 * 4.将要测试的类作为数组传入Suite.SuiteClasses({})
+	 * 
+	 */
+  3.2:需要运行的多个测试类:
+    3.2.1:
+      TaskTest1.java
+    3.2.2:
+      TaskTest2.java
+    3.2.3:
+      TaskTest3.java
+4.参数化设置:
+  /junit4Demo/test/com/imooc/util/
+      测试方法相同，预期值和参数不同时适用此测试方法
+  ParameterTest.java  
+    /*
+	 * 1.更改默认的测试运行器为RunWith(Parameterized.class)
+	 * 2.声明变量来存放预期值和结果值
+	 * 3.声明一个返回值为Collection的公共静态方法，并使用@Parameters进行修饰
+	 * 4.为测试类声明一个带有参数的公共构造方法函数，并在其中为之声明变量赋值
+	 * 
+	 */    
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      
