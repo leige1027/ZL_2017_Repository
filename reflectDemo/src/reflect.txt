@@ -1,0 +1,63 @@
+    . Class类的使用
+    . 方法的反射
+    . 成员变量的反射
+    . 构造函数的反射
+    . java类的加载机制
+ --------------------------
+ 1）万事万物皆对象
+          静态成员变量，普通数据类型不是对象
+          类是java.lang.Class的实例对象
+ 2）Class类实例表示
+   ClassDemo1.java
+ 3）动态加载类，运行时刻
+   Class.forName("类的全称")
+         不仅表示了类的类类型，还代表了动态加载
+         注意区分编译、运行
+         编译时期加载类是静态加载类，运行时期加载类是动态加载
+ 4）基本数据类型，void关键字都存在类类型 
+ 5）Class类的基本API
+          要获得类的信息，首先要得到类的类类型，其他方法查看帮助文档
+   1.通过反射获取类名，成员方法
+      ClassUtil.java 
+      ClassDemo2.java
+   2.通过反射获取成员变量
+      ClassUtil.java
+      ClassDemo3.java
+   3.通过反射获得类的构造函数
+      ClassUtil.java
+      ClassDemo4.java
+   4.方法的反射
+     MethodDemo1.java
+     1）获取具体方法
+       Method m2 =c.getMethod("print", new Class[]{});
+     2）方法的反射操作
+       m2.invoke(a1,new Object[]{})
+ 6)泛型的本质
+     FanXingDemo.java    
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+ 
