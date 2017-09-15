@@ -15,6 +15,8 @@ public class Test {
 		// 模糊查询用户名为小明的用户
 		Filter f2 = new Filter();
 		f2.setUserName("小明"); 
+		f2.setAge(30);
+		f2.setEmail("ming@163.com");
 		
 		// 查询邮箱为其中任意一个的用户
 		Filter f3 = new Filter();
@@ -111,18 +113,18 @@ public class Test {
 					}
 					 // 去除最后一个逗号
 					 sb.deleteCharAt(sb.length()-1);
-					 sb.append(");");
+					 sb.append(")");
 				 }else {
 					 /*
 					  * 不包含逗号的单一字符串，拼接sql
 					  */
-					 sb.append("=").append("'"+fieldValue+"';");
+					 sb.append("=").append("'"+fieldValue+"'");
 				 }
 			 }else if(fieldValue instanceof Integer){
 				 /*
 				  * 判断属性类型为Integer类型，拼接sql
 				  */
-				 sb.append("=").append(fieldValue+";");
+				 sb.append("=").append(fieldValue);
 			 }
 		}
 		
