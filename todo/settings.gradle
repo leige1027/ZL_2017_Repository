@@ -1,0 +1,7 @@
+/*
+    settings.gradle文件用于管理多项目构建的
+ */
+
+//项目名称
+rootProject.name = 'todo'
+

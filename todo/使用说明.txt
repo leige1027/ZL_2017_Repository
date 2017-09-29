@@ -1,0 +1,37 @@
+1.gradleDemo (todo) 应用程序,只实现代办事项
+
+2.java应用程序版 (打包成jar包)
+
+    2.1. idea右侧Gradle/todo/Tasks/build/
+            jar  : 1.编译java目录下源文件并打成jar包,放到build/libs目录下
+                   2.build/classes目录下存放成成的字节码文件
+                   3.jar包中包含main方法的类可直接运行,
+                   4.不包含main的类一般作为依赖供其他工程引用
+            jar包在terminal终端(window的cmd命令行)运行:
+                   java -classpath build/libs/todo-1.0-SNAPSHOT.jar com.zl.gradle.todo.App
+            其他命令双击使用 类似
+            build   : 执行的是build.gradle文件实现跟jar相同功能--编译打包
+
+3.web版 (在2基础上添加web程序)
+    3.1. idea右侧Gradle/todo/Tasks/build/
+            war  : 1.编译webApp和resources目录下源文件并打成war包,放到build/libs目录下
+                   2.将todo-1.0-SNAPSHOT.war文件copy到tomcat的webapps目录下面
+                     运行startup.bat文件,启动tomcat,自行解压war包,
+                     生成todo-1.0-SNAPSHOT文件夹,下面对应
+                         1.index.html文件
+                         2.WEB-INF文件夹
+                               1.web.xml
+                               2.classes文件夹
+                                   1.log.properties
+                                   2.com对应源文件生成的字节码文件
+                         3.META-INF文件夹(打包成war包时自动生成)
+                   3.打开浏览器,输入:
+                      http://localhost:8082/todo-1.0-SNAPSHOT/index.html
+                      访问index.html,这里8082需要改成自己tomcat配置的端口号
+
+
+4.自定义任务创建工程目录结构
+    4.1. build.gradle文件中定义task1,task2
+         task1生成java项目目录结构
+         task2依赖task1生成web项目目录结构
+         生成的任务,点击idea右侧Gradle/todo/Tasks/other/目录下,双击运行即可生成项目目录结构
